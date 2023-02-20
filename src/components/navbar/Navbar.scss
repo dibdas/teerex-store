@@ -1,0 +1,43 @@
+.navbar{
+    background-color: rgba(156, 148, 148, 0.575);
+    height: 10vh;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 1rem;
+        border: 1px solid red;
+        height: 100%;
+    
+    }
+    .nav-left{
+        padding-inline:1rem ;
+
+    }
+    .nav-right{
+        display: flex;
+        align-items: center;
+        gap:1rem;
+        
+        margin-right: 2rem;
+        .products{
+            border-bottom: 1px solid black;
+            padding-bottom: 0.2rem;
+        }
+        .cart-container{
+            position: relative;
+            .icons{
+                font-size: 2rem;
+            }
+            .cart-count{
+                position: absolute;
+                bottom:1.7rem;
+                left:2rem;
+                border-radius: 50%;
+                background-color: white;
+                font-size:0.9rem;
+            }
+        }
+    }
+
+}
