@@ -1,0 +1,31 @@
+.home-container{
+    width:90vw;
+    margin-inline: auto;
+    margin-top: 2rem;
+
+    .category-product-container{
+        margin-top: 4rem;
+        display: flex;
+        gap:3rem;
+        width:100%;
+        .search-container{
+            
+        }
+        .category-container{
+            width:20vw;
+            border: 1px solid violet;
+
+        }
+        .product-container{
+            display: flex;
+            width:60vw;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-inline: 0.6rem;
+            border: 1px solid green;
+            
+            
+        }
+        
+    }
+}
