@@ -23,9 +23,28 @@
             gap: 2rem;
             padding-inline: 0.6rem;
             border: 1px solid green;
-            
-            
         }
         
     }
 }
+
+@media screen and (max-width:768px) {
+    .home-container{
+        width:100vw;
+        .category-product-container{
+            width: 90%;
+            margin-inline:auto;
+            .category-container{
+                display: none;
+            }
+            .product-container{
+                width:100%;
+            }
+        }
+
+    }
+    
+
+}
+
+
