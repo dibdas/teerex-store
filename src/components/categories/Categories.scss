@@ -1,0 +1,41 @@
+.categories{
+    width:70%;
+    border:1px solid black;
+    aspect-ratio: 16/9;
+    text-align: left;
+    padding:1rem;
+    margin-block: 1rem;
+    
+    .color-category,.type-category,.gender-category{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-block: 0.6rem;
+        gap:1rem;
+        .colors,.types,.gender{
+            display: flex;
+            gap:0.7rem;
+        }
+        .input-block{
+            display: block;
+            padding: 2rem;
+            border:1px solid black;
+        }
+
+
+    }
+    
+}
+@media screen and (max-width:798px) {
+    .categories{
+        display: none;
+    }
+
+}
+@media screen and (max-width:1260px) {
+    .categories{
+        display: block;
+        width: 100%;
+    }
+
+}
