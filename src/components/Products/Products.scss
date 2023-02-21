@@ -27,11 +27,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .add-to-cart{
+            .add-to-cart,.quantity-selector{
                 background-color: black;
                 color: aliceblue;
-                padding:0.3rem;
+                padding:0.4rem;
+                width:fit-content;
+                button{
+                    padding:0.1rem 0.4rem;
+                }
+                .quantity{
+                    display: inline-block;
+                    font-size: 1rem;
+                    padding:0.5rem;
+                    font-weight: 600;
                 
+                }
+            }
+            .increament,.decreament{
+                padding:0.2rem;
             }
         }
 
