@@ -7,14 +7,14 @@ function Product({ product }) {
   // console.log(product.id);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cartReducer.cart);
-  const quantity = cart.find((item) => item.id === product?.id)?.quantity || 10;
+  const quantity = cart.find((item) => item.id === product?.id)?.quantity || 0;
   function handleClickIncrease() {
-    console.log(product?.id);
-    dispatch(addToCart(product?.id));
+    console.log(product);
+    dispatch(addToCart(product));
   }
   function handleClickDecrease() {
-    console.log(product?.id);
-    dispatch(deleteFromCart(product?.id));
+    console.log(product);
+    dispatch(deleteFromCart(product));
   }
   return (
     <>
