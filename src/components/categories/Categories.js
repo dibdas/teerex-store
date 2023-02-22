@@ -13,8 +13,9 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
 
   // function handleChangeType(event) {
   //   console.log(event.target.value);
+  //   event.preventDefault()
 
-  //   setTypes(event.target.value);
+  //   onTypes{()=>(event.target.value)};
   // }
   // function handleChangeColor(event) {
   //   console.log(event.target.value);
@@ -63,7 +64,10 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
                 id={color}
                 name={colors}
                 // onChange={handleChangeColor}
-                onChange={() => onColor(color)}
+                onChange={(event) => {
+                  // event.preventDefault();
+                  onColor(event.target.value);
+                }}
                 // onClick={() => navigate(`/collections/${color}`)}
               />
               <label htmlFor={color} name={colors}>
@@ -85,7 +89,10 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
                 id={gen}
                 name={gender}
                 // onChange={handleChangeGender}
-                onChange={() => onGender(gen)}
+                onChange={(event) => {
+                  // event.preventDefault();
+                  onGender(event.target.value);
+                }}
                 // onClick={() => navigate(`/collections/${gen}`)}
               />
               <label htmlFor={gen} name={gender}>
@@ -105,7 +112,10 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
                 name={type}
                 // checked={item}
                 // onChange={handleChangeType}
-                onChange={() => onTypes(item)}
+                onChange={(event) => {
+                  // event.preventDefault();
+                  onTypes(event.target.value);
+                }}
                 // onClick={() => navigate(`/collections/${item}`)}
               />
               <label htmlFor={item} name={type}>
