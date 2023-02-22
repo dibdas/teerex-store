@@ -6,7 +6,7 @@ export const fetchData = createAsyncThunk("fetching/products", async () => {
       "https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json"
     );
     const productsData = await response.json();
-    console.log(productsData);
+    // console.log(productsData);
     return productsData;
   } catch (err) {
     console.log(err);
@@ -21,13 +21,13 @@ const productSlice = createSlice({
   },
   reducers: {
     loadProducts: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.products = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.products = action.payload;
     });
   },
