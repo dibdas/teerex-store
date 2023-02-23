@@ -20,6 +20,7 @@ function Home(props) {
   console.log(typesFilter);
   console.log(gendersFilter);
   const products = useSelector((state) => state?.productReducer?.products);
+  // console.log(products);
   const colors = [...new Set(products?.map((item) => item.color))];
   // console.log(colors);
   const type = [...new Set(products?.map((item) => item.type))];
@@ -154,33 +155,221 @@ function Home(props) {
     checking();
   }, [check, typesFilter, colorFilter, gendersFilter]);
 
-  return (
-    <div className="home-container">
-      <div className="search-container">
-        <Search />
-      </div>
-
-      <div className="category-product-container">
-        <div className="category-container">
-          <Categories
-            colors={colors}
-            type={type}
-            gender={gender}
-            onTypes={setTypesFilter}
-            onColor={setColorFilter}
-            onGender={setGendersFilter}
-          />
+  if ((colorFilter || gendersFilter || typesFilter) === null) {
+    return (
+      <div className="home-container">
+        <div className="search-container">
+          <Search />
         </div>
+
+        <div className="category-product-container">
+          <div className="category-container">
+            <Categories
+              colors={colors}
+              type={type}
+              gender={gender}
+              onTypes={setTypesFilter}
+              onColor={setColorFilter}
+              onGender={setGendersFilter}
+            />
+          </div>
+
+          <div className="product-container">
+            {products?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (colorFilter !== null && gendersFilter === null && typesFilter === null) {
+    return (
+      <div className="home-container">
+        <div className="search-container">
+          <Search />
+        </div>
+
+        <div className="category-product-container">
+          <div className="category-container">
+            <Categories
+              colors={colors}
+              type={type}
+              gender={gender}
+              onTypes={setTypesFilter}
+              onColor={setColorFilter}
+              onGender={setGendersFilter}
+            />
+          </div>
+
+          <div className="product-container">
+            {colorArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (typesFilter !== null && gendersFilter === null && colorFilter === null) {
+    return (
+      <div className="home-container">
+        <div className="search-container">
+          <Search />
+        </div>
+
+        <div className="category-product-container">
+          <div className="category-container">
+            <Categories
+              colors={colors}
+              type={type}
+              gender={gender}
+              onTypes={setTypesFilter}
+              onColor={setColorFilter}
+              onGender={setGendersFilter}
+            />
+          </div>
+
+          <div className="product-container">
+            {typesArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (gendersFilter !== null && colorFilter === null && typesFilter === null) {
+    return (
+      <div className="home-container">
+        <div className="search-container">
+          <Search />
+        </div>
+
+        <div className="category-product-container">
+          <div className="category-container">
+            <Categories
+              colors={colors}
+              type={type}
+              gender={gender}
+              onTypes={setTypesFilter}
+              onColor={setColorFilter}
+              onGender={setGendersFilter}
+            />
+          </div>
+
+          <div className="product-container">
+            {genderArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="home-container">
+        <div className="search-container">
+          <Search />
+        </div>
+
+        <div className="category-product-container">
+          <div className="category-container">
+            <Categories
+              colors={colors}
+              type={type}
+              gender={gender}
+              onTypes={setTypesFilter}
+              onColor={setColorFilter}
+              onGender={setGendersFilter}
+            />
+          </div>
+
+          <div className="product-container">
+            {filterArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+//   return (
+//     <div className="home-container">
+//       <div className="search-container">
+//         <Search />
+//       </div>
+
+//       <div className="category-product-container">
+//         <div className="category-container">
+//           <Categories
+//             colors={colors}
+//             type={type}
+//             gender={gender}
+//             onTypes={setTypesFilter}
+//             onColor={setColorFilter}
+//             onGender={setGendersFilter}
+//           />
+//         </div>
+
+//         <div className="product-container">
+//           {genderArray?.map((item, id) => {
+//             return <Product product={item} key={id} />;
+//           })}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+{
+  /* 
+        {gendersFilter !== null && colorFilter && typesFilter === null && (
+          <div className="product-container">
+            {genderArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        )}
+
         {(colorFilter || typesFilter || gendersFilter) === null && (
           <div className="product-container">
             {products?.map((item, id) => {
               return <Product product={item} key={id} />;
             })}
           </div>
+        )} */
+}
+{
+  /* 
+        {gendersFilter && colorFilter && typesFilter === null && (
+          <div className="product-container">
+            {colorArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        )} */
+}
+
+{
+  /* {colorFilter !== null && typesFilter && gendersFilter === null && (
+          <div className="product-container">
+            {colorArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
         )}
-      </div>
-    </div>
-  );
+        {typesFilter !== null && colorFilter && gendersFilter === null && (
+          <div className="product-container">
+            {typesArray?.map((item, id) => {
+              return <Product product={item} key={id} />;
+            })}
+          </div>
+        )} */
 }
 
 export default Home;
