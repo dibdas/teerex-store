@@ -7,7 +7,7 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
   // const [types, setTypes] = useState(null);
   // const [color, setColor] = useState(null);
   // const [genders, setGenders] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // console.log(colors, type, gender);
   // const products = useSelector((state) => state.productReducer.products);
 
