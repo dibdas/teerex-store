@@ -1,6 +1,8 @@
 .navbar{
     background-color: rgba(156, 148, 148, 0.575);
     height: 10vh;
+    position: sticky;
+    z-index: 99;
     .container{
         display: flex;
         justify-content: space-between;
@@ -31,11 +33,12 @@
             }
             .cart-count{
                 position: absolute;
-                bottom:1.7rem;
+                bottom:1.5rem;
                 left:2rem;
                 border-radius: 50%;
                 background-color: white;
                 font-size:0.9rem;
+                padding:0.2rem;
             }
         }
     }
