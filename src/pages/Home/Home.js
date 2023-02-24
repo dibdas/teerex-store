@@ -16,6 +16,9 @@ function Home(props) {
   const [genderArray, setGenderArray] = useState([]);
   const [filterArray, setFilterArray] = useState([]);
   const [check, setCheck] = useState(0);
+  // console.log(searchInput);
+  // const searchInputArray = searchInput?.split(" ") || ["Pink"];
+  // console.log(searchInputArray);
   console.log(colorFilter);
   console.log(typesFilter);
   console.log(gendersFilter);
@@ -92,7 +95,7 @@ function Home(props) {
       typesFilter !== null
     ) {
       const productsArray = products.filter(
-        (item) => item.gender === colorFilter && item.type === typesFilter
+        (item) => item.color === colorFilter && item.type === typesFilter
       );
       setFilterArray(productsArray);
       console.log(filterArray);
@@ -158,10 +161,6 @@ function Home(props) {
   if ((colorFilter || gendersFilter || typesFilter) === null) {
     return (
       <div className="home-container">
-        <div className="search-container">
-          <Search />
-        </div>
-
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -187,10 +186,6 @@ function Home(props) {
   if (colorFilter !== null && gendersFilter === null && typesFilter === null) {
     return (
       <div className="home-container">
-        <div className="search-container">
-          <Search />
-        </div>
-
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -216,10 +211,6 @@ function Home(props) {
   if (typesFilter !== null && gendersFilter === null && colorFilter === null) {
     return (
       <div className="home-container">
-        <div className="search-container">
-          <Search />
-        </div>
-
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -244,10 +235,6 @@ function Home(props) {
   if (gendersFilter !== null && colorFilter === null && typesFilter === null) {
     return (
       <div className="home-container">
-        <div className="search-container">
-          <Search />
-        </div>
-
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -271,10 +258,6 @@ function Home(props) {
   } else {
     return (
       <div className="home-container">
-        <div className="search-container">
-          <Search />
-        </div>
-
         <div className="category-product-container">
           <div className="category-container">
             <Categories
