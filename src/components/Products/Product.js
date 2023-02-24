@@ -4,16 +4,16 @@ import { addToCart, deleteFromCart } from "../../redux/cartSlice";
 import "./Products.scss";
 
 function Product({ product }) {
-  // console.log(product.id);
+  // console.log(product);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cartReducer.cart);
   const quantity = cart.find((item) => item.id === product?.id)?.quantity || 0;
   function handleClickIncrease() {
-    console.log(product);
+    // console.log(product);
     dispatch(addToCart(product));
   }
   function handleClickDecrease() {
-    console.log(product);
+    // console.log(product);
     dispatch(deleteFromCart(product));
   }
   return (
