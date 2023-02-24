@@ -6,7 +6,9 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 
 function Cart(props) {
   const cart = useSelector((state) => state.cartReducer.cart);
-  console.log(cart);
+  // console.log(cart);
+  let total = 0;
+  cart.forEach((item) => (total = total + item.quantity * item.price));
 
   return (
     <div className="cart">
@@ -15,6 +17,9 @@ function Cart(props) {
         {cart.map((item, id) => {
           return <CartItem cartItem={item} key={id} />;
         })}
+      </div>
+      <div className="total">
+        <h4>Total:{total}</h4>
       </div>
       {cart.length === 0 && (
         <div className="empty-cart">
