@@ -1,7 +1,7 @@
 import React from "react";
 import "./CartItem.scss";
 import { AiTwotoneDelete } from "react-icons/ai";
-import { addToCart, deleteFromCart } from "../../redux/cartSlice";
+import { addToCart, deleteFromCart, removeItem } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 function CartItem({ cartItem }) {
   const dispatch = useDispatch();
@@ -14,15 +14,24 @@ function CartItem({ cartItem }) {
     // console.log(product);
     dispatch(deleteFromCart(cartItem));
   }
+  function handleDelete() {
+    dispatch(removeItem(cartItem));
+  }
   return (
     <div className="cart-items">
       <div className="items">
         <div className="cart-item-image">
           <img src={cartItem.imageURL} alt="" />
         </div>
-        <div className="item-name">{cartItem.name}</div>
+        <div className="name-price">
+          <div className="item-name">{cartItem.name}</div>
 
-        <div className="cart-item-price">Rs.{cartItem.price}</div>
+          <div className="cart-item-price">Rs.{cartItem.price}</div>
+          <div className="subtotal">
+            <h4>Sub Total: Rs.{cartItem.quantity * cartItem.price}</h4>
+          </div>
+        </div>
+
         <div className="quantity-selector">
           <button className="increament" onClick={handleClickIncrease}>
             +
@@ -33,7 +42,7 @@ function CartItem({ cartItem }) {
           </button>
         </div>
 
-        <div className="delete-item">
+        <div className="delete-item" onClick={handleDelete}>
           <AiTwotoneDelete />
         </div>
       </div>
