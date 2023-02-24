@@ -1,8 +1,19 @@
 import React from "react";
 import "./CartItem.scss";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { addToCart, deleteFromCart } from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
 function CartItem({ cartItem }) {
+  const dispatch = useDispatch();
   console.log(cartItem);
+  function handleClickIncrease() {
+    // console.log(product);
+    dispatch(addToCart(cartItem));
+  }
+  function handleClickDecrease() {
+    // console.log(product);
+    dispatch(deleteFromCart(cartItem));
+  }
   return (
     <div className="cart-items">
       <div className="items">
