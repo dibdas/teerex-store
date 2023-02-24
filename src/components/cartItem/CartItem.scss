@@ -1,48 +1,61 @@
 .cart-items{
     width:90%;
-    box-shadow: 1px;
-    margin-inline: 1rem;
     .items{
         display: flex;
         flex-direction: row;
-        align-items: center;
+        
         justify-content: center;
-        gap:0.7rem;
-        padding-block: 0.5rem;
-    }
-    .cart-item-image{
-        width:6rem;
-        height:6rem;
-        border:1px solid grey;
-        img{
-            width:100%;
-            height: 100%;
-            object-fit: cover;
+        gap:2rem;
+        padding-block: 1rem;
+        border-bottom: 1px soild rgba(128, 128, 128, 0.75);
+        .cart-item-image{
+            width:6rem;
+            height:6rem;
+            // border:1px solid grey;
+            min-width:8rem;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
-    }
-    .cart-item-price,.item-name{
-        font-size:1rem;
-        font-weight: 900;
+        .name-price{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-inline: 1rem;
+            .cart-item-price,.item-name{
+                font-size:1.2rem;
+                font-weight: 900;
+    
+            }
 
-    }
-    .quantity-selector{
-        color: aliceblue;
-        
-        width:9rem;
-        border:1px solid red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        button{
-            padding:0.1rem 0.4rem;
         }
-        .quantity{
-            display: inline-block;
-            font-size: 1rem;
-            padding:0.5rem;
-            font-weight: 600;
-            color: black;
         
+        .quantity-selector{
+            color: #f0f8ff;
+            width:fit-content;
+            padding-inline: 1rem;
+            border-radius: 0.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(128, 128, 128, 0.633);
+            button{
+                padding:0.1rem 0.4rem;
+            }
+            .quantity{
+                display: inline-block;
+                font-size: 1rem;
+                padding:0.5rem;
+                font-weight: 600;
+                color: black;
+            
+            }
+        }
+        .delete-item{
+            font-size:1.5rem;
+            align-self: center;
         }
     }
 }
