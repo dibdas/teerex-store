@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToCart, deleteFromCart } from "../../redux/cartSlice";
 import "./Products.scss";
 
 function Product({ product }) {
   // console.log(product);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cartReducer.cart);
   const quantity = cart.find((item) => item.id === product?.id)?.quantity || 0;
   function handleClickIncrease() {
@@ -21,7 +23,10 @@ function Product({ product }) {
       <div className="product-component">
         <div className="product">
           <div className="product-title">{product?.name}</div>
-          <div className="product-image-container">
+          <div
+            className="product-image-container"
+            onClick={() => navigate(`/products/${product.id}`)}
+          >
             <img src={product?.imageURL} alt="" />
           </div>
           <div className="product-price-cart">
