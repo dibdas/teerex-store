@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Categories from "../../components/categories/Categories";
 import Product from "../../components/Products/Product";
-import Search from "../../components/search/Search";
+import Filter from "../../components/filter/Filter";
 import { fetchData } from "../../redux/productSlice";
 import "./Home.scss";
 
 function Home(props) {
   const dispatch = useDispatch();
+
   const [typesFilter, setTypesFilter] = useState(null);
   const [colorFilter, setColorFilter] = useState(null);
   const [gendersFilter, setGendersFilter] = useState(null);
@@ -161,6 +162,10 @@ function Home(props) {
   if ((colorFilter || gendersFilter || typesFilter) === null) {
     return (
       <div className="home-container">
+        <div className="filter-component">
+          <Filter />
+        </div>
+
         <div className="category-product-container">
           <div className="category-container">
             <Categories

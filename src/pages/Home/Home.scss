@@ -31,20 +31,39 @@
 @media screen and (max-width:768px) {
     .home-container{
         width:100vw;
+        .filter-component{
+            display: block;
+        }
         .category-product-container{
             width: 90%;
             margin-inline:auto;
             .category-container{
                 display: none;
             }
+            
             .product-container{
                 width:100%;
             }
         }
 
     }
-    
-
 }
+
+
+@media screen and (min-width:768px) {
+    .home-container{
+        .filter-component{
+            display: none;
+        }
+     
+        .category-product-container{
+                  
+            
+            
+        }
+
+    }
+}
+
 
 
