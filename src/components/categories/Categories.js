@@ -66,6 +66,7 @@ function Categories({ colors, type, gender, onTypes, onGender, onColor }) {
                 // onChange={handleChangeColor}
                 onChange={(event) => {
                   // event.preventDefault();
+                  console.log(event.target.value);
                   onColor(event.target.value);
                 }}
                 // onClick={() => navigate(`/collections/${color}`)}
