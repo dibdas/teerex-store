@@ -1,6 +1,7 @@
 .categories{
     width:70%;
-    border:1px solid black;
+    // border:1px solid black;
+    box-shadow: 10px 5px 5px grey;
     aspect-ratio: 16/9;
     text-align: left;
     padding:1rem;
@@ -19,20 +20,21 @@
         .input-block{
             display: block;
             padding: 2rem;
-            border:1px solid black;
+            // border:1px solid black;
+           
         }
 
 
     }
     
 }
-@media screen and (max-width:798px) {
+@media screen and (max-width:768px) {
     .categories{
         display: none;
     }
 
 }
-@media screen and (max-width:1260px) {
+@media screen and (min-width:768px) {
     .categories{
         display: block;
         width: 100%;
