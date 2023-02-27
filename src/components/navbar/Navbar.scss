@@ -8,7 +8,7 @@
         justify-content: space-between;
         align-items: center;
         margin-inline: 1rem;
-        border: 1px solid red;
+        // border: 1px solid red;
         height: 100%;
     
     }
@@ -41,6 +41,14 @@
                 padding:0.2rem;
             }
         }
+    }
+
+}
+
+
+@media screen and (max-width:915px){
+    .products{
+        display: none;
     }
 
 }
