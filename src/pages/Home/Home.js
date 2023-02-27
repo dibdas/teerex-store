@@ -8,7 +8,7 @@ import "./Home.scss";
 
 function Home(props) {
   const dispatch = useDispatch();
-
+  const [openFilter, setOpenFilter] = useState(true);
   const [typesFilter, setTypesFilter] = useState(null);
   const [colorFilter, setColorFilter] = useState(null);
   const [gendersFilter, setGendersFilter] = useState(null);
@@ -163,7 +163,24 @@ function Home(props) {
     return (
       <div className="home-container">
         <div className="filter-component">
-          <Filter />
+          <Filter onClose={() => setOpenFilter(!openFilter)} />
+
+          <div className="category-flow-container">
+            {openFilter && (
+              <div className="category-component">
+                <div className="close-open-container">
+                  <Categories
+                    colors={colors}
+                    type={type}
+                    gender={gender}
+                    onTypes={setTypesFilter}
+                    onColor={setColorFilter}
+                    onGender={setGendersFilter}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="category-product-container">
@@ -191,6 +208,25 @@ function Home(props) {
   if (colorFilter !== null && gendersFilter === null && typesFilter === null) {
     return (
       <div className="home-container">
+        <div className="filter-component">
+          <Filter onClose={() => setOpenFilter(!openFilter)} />
+
+          {openFilter && (
+            <div className="category-component">
+              <div className="close-open-container">
+                <Categories
+                  colors={colors}
+                  type={type}
+                  gender={gender}
+                  onTypes={setTypesFilter}
+                  onColor={setColorFilter}
+                  onGender={setGendersFilter}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -216,6 +252,25 @@ function Home(props) {
   if (typesFilter !== null && gendersFilter === null && colorFilter === null) {
     return (
       <div className="home-container">
+        <div className="filter-component">
+          <Filter onClose={() => setOpenFilter(!openFilter)} />
+
+          {openFilter && (
+            <div className="category-component">
+              <div className="close-open-container">
+                <Categories
+                  colors={colors}
+                  type={type}
+                  gender={gender}
+                  onTypes={setTypesFilter}
+                  onColor={setColorFilter}
+                  onGender={setGendersFilter}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -240,6 +295,25 @@ function Home(props) {
   if (gendersFilter !== null && colorFilter === null && typesFilter === null) {
     return (
       <div className="home-container">
+        <div className="filter-component">
+          <Filter onClose={() => setOpenFilter(!openFilter)} />
+
+          {openFilter && (
+            <div className="category-component">
+              <div className="close-open-container">
+                <Categories
+                  colors={colors}
+                  type={type}
+                  gender={gender}
+                  onTypes={setTypesFilter}
+                  onColor={setColorFilter}
+                  onGender={setGendersFilter}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="category-product-container">
           <div className="category-container">
             <Categories
@@ -263,6 +337,27 @@ function Home(props) {
   } else {
     return (
       <div className="home-container">
+        <div className="filter-component">
+          <div className="filter-show">
+            <Filter onClose={() => setOpenFilter(!openFilter)} />
+          </div>
+
+          {openFilter && (
+            <div className="category-component">
+              <div className="close-open-container">
+                <Categories
+                  colors={colors}
+                  type={type}
+                  gender={gender}
+                  onTypes={setTypesFilter}
+                  onColor={setColorFilter}
+                  onGender={setGendersFilter}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="category-product-container">
           <div className="category-container">
             <Categories
