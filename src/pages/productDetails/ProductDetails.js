@@ -8,22 +8,22 @@ import "./ProductDetails.scss";
 function ProductDetails(props) {
   const params = useParams();
   const productId = params.productParamsId;
-  console.log(productId);
+  // console.log(productId);
   const cart = useSelector((state) => state?.cartReducer?.cart);
   const quantity = cart.find((item) => item.id == productId)?.quantity || 0;
   const products = useSelector((state) => state?.productReducer?.products);
-  console.log(products);
+  // console.log(products);
   const [productDetails, setProductDetails] = useState(null);
   function productData() {
-    console.log("j");
+    // console.log("j");
     const product = products.find((item) => item.id == productId);
-    console.log(product);
+    // console.log(product);
     setProductDetails(product);
   }
   const dispatch = useDispatch();
   useEffect(() => {
     setProductDetails(null);
-    console.log("jk");
+    // console.log("jk");
     productData();
   }, [params]);
 
