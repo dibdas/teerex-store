@@ -36,19 +36,19 @@ function Home(props) {
     const productsArray = products.filter(
       (item) => item.gender === gendersFilter
     );
-    console.log(productsArray);
+    // console.log(productsArray);
     setGenderArray(productsArray);
   }
 
   function filterType() {
     const productsArray = products.filter((item) => item.type === typesFilter);
-    console.log(productsArray);
+    // console.log(productsArray);
     setTypesArray(productsArray);
   }
 
   function filterColor() {
     const productsArray = products.filter((item) => item.color === colorFilter);
-    console.log(productsArray);
+    // console.log(productsArray);
     setColorArray(productsArray);
   }
 
@@ -66,7 +66,7 @@ function Home(props) {
           item.type === typesFilter
       );
       setFilterArray(productsArray);
-      console.log(productsArray);
+      // console.log(productsArray);
     }
     if (
       colorFilter !== null &&
@@ -77,7 +77,7 @@ function Home(props) {
         (item) => item.color === colorFilter && item.gender === gendersFilter
       );
       setFilterArray(productsArray);
-      console.log(filterArray);
+      // console.log(filterArray);
     }
     if (
       colorFilter === null &&
@@ -88,7 +88,7 @@ function Home(props) {
         (item) => item.gender === gendersFilter && item.type === typesFilter
       );
       setFilterArray(productsArray);
-      console.log(filterArray);
+      // console.log(filterArray);
     }
     if (
       colorFilter !== null &&
@@ -99,11 +99,11 @@ function Home(props) {
         (item) => item.color === colorFilter && item.type === typesFilter
       );
       setFilterArray(productsArray);
-      console.log(filterArray);
+      // console.log(filterArray);
     }
   }
   function checking() {
-    console.log("jkhk");
+    // console.log("jkhk");
     if (
       typesFilter !== null &&
       colorFilter !== null &&
