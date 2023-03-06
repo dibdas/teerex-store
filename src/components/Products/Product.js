@@ -18,40 +18,81 @@ function Product({ product }) {
     // console.log(product);
     dispatch(deleteFromCart(product));
   }
-  return (
-    <>
-      <div className="product-component">
-        <div className="product">
-          <div className="product-title">{product?.name}</div>
-          <div
-            className="product-image-container"
-            onClick={() => navigate(`/products/${product.id}`)}
-          >
-            <img src={product?.imageURL} alt="" />
-          </div>
-          <div className="product-price-cart">
-            <div className="product-price">{product?.price}</div>
-            {quantity < 1 && (
-              <div className="add-to-cart" onClick={handleClickIncrease}>
-                Add To Cart
-              </div>
-            )}
-            {quantity > 0 && (
-              <div className="quantity-selector">
-                <button className="increament" onClick={handleClickIncrease}>
-                  +
-                </button>
-                <strong className="quantity">{quantity}</strong>
-                <button className="decreament" onClick={handleClickDecrease}>
-                  -
-                </button>
-              </div>
-            )}
+  if (quantity > 9) {
+    return (
+      <>
+        <div className="product-component">
+          <div className="product">
+            <div className="product-title">{product?.name}</div>
+            <div
+              className="product-image-container"
+              onClick={() => navigate(`/products/${product.id}`)}
+            >
+              <img src={product?.imageURL} alt="" />
+            </div>
+            <div className="product-price-cart">
+              <div className="product-price">{product?.price}</div>
+              {quantity < 1 && (
+                <div className="add-to-cart" onClick={handleClickIncrease}>
+                  Add To Cart
+                </div>
+              )}
+              {quantity > 0 && (
+                <div className="quantity-selector">
+                  <button
+                    className="increament"
+                    disabled
+                    onClick={handleClickIncrease}
+                  >
+                    +
+                  </button>
+                  <strong className="quantity">{quantity}</strong>
+                  <button className="decreament" onClick={handleClickDecrease}>
+                    -
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className="product-component">
+          <div className="product">
+            <div className="product-title">{product?.name}</div>
+            <div
+              className="product-image-container"
+              onClick={() => navigate(`/products/${product.id}`)}
+            >
+              <img src={product?.imageURL} alt="" />
+            </div>
+            <div className="product-price-cart">
+              <div className="product-price">{product?.price}</div>
+              {quantity < 1 && (
+                <div className="add-to-cart" onClick={handleClickIncrease}>
+                  Add To Cart
+                </div>
+              )}
+              {quantity > 0 && (
+                <div className="quantity-selector">
+                  <button className="increament" onClick={handleClickIncrease}>
+                    +
+                  </button>
+                  <strong className="quantity">{quantity}</strong>
+                  <button className="decreament" onClick={handleClickDecrease}>
+                    -
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Product;
