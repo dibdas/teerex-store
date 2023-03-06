@@ -27,35 +27,70 @@ function ProductDetails(props) {
     productData();
   }, [params]);
 
-  return (
-    <div className="product-details">
-      <div className="container">
-        <div className="product-image">
-          <img src={productDetails?.imageURL} alt={productDetails?.name} />
-        </div>
-        <div className="product-info">
-          <div className="product-name">{productDetails?.name} </div>
-          <div className="product-price">Rs. {productDetails?.price} </div>
-          <div className="product-price">{productDetails?.type} </div>
-        </div>
-        <div className="quantity-selector">
-          <button
-            className="increament"
-            onClick={() => dispatch(addToCart(productDetails))}
-          >
-            +
-          </button>
-          <strong className="quantity">{quantity}</strong>
-          <button
-            className="decreament"
-            onClick={() => dispatch(deleteFromCart(productDetails))}
-          >
-            -
-          </button>
+  if (quantity > 9) {
+    return (
+      <div className="product-details">
+        <div className="container">
+          <div className="product-image">
+            <img src={productDetails?.imageURL} alt={productDetails?.name} />
+          </div>
+          <div className="product-info">
+            <div className="product-name">{productDetails?.name} </div>
+            <div className="product-price">Rs. {productDetails?.price} </div>
+            <div className="product-price">{productDetails?.type} </div>
+          </div>
+          <div className="quantity-selector">
+            <button
+              className="increament"
+              disabled
+              onClick={() => dispatch(addToCart(productDetails))}
+            >
+              +
+            </button>
+            )}
+            <strong className="quantity">{quantity}</strong>
+            <button
+              className="decreament"
+              onClick={() => dispatch(deleteFromCart(productDetails))}
+            >
+              -
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="product-details">
+        <div className="container">
+          <div className="product-image">
+            <img src={productDetails?.imageURL} alt={productDetails?.name} />
+          </div>
+          <div className="product-info">
+            <div className="product-name">{productDetails?.name} </div>
+            <div className="product-price">Rs. {productDetails?.price} </div>
+            <div className="product-price">{productDetails?.type} </div>
+          </div>
+          <div className="quantity-selector">
+            <button
+              className="increament"
+              onClick={() => dispatch(addToCart(productDetails))}
+            >
+              +
+            </button>
+            )}
+            <strong className="quantity">{quantity}</strong>
+            <button
+              className="decreament"
+              onClick={() => dispatch(deleteFromCart(productDetails))}
+            >
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ProductDetails;
